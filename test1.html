@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>测试1</title>
+	<link rel="stylesheet" type="text/css" href="css/test.css">
+	<style type="text/css">		
+.test{
+	display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		margin-top: 10%;
+		color:blue;
+}
+.name{
+	 position: relative;
+
+}
+.name1{
+  position: relative;
+  color: black;
+}
+.name1::after{
+	content: "";
+	position: absolute;
+    background: blue;
+    width: 0px;
+    height: 5px;
+    top:30px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -webkit-transition:width 1s;
+}
+.name2{
+  position: relative;
+  color: blue;
+}
+.name2::after{
+	content: "";
+	position: absolute;
+    background: blue;
+    width: 80px;
+    height: 5px;
+    top:30px;
+    left: 50%;
+   -webkit-transform: translateX(-50%);
+    -webkit-transition:width 1s;
+}
+
+	</style>
+</head>
+<body>
+	<span class="test">
+		<div class="name name1" id="name">前端学院</div>
+	    <!-- <div>装饰</div> -->
+	    <button style="color:black;width:200px;margin-top:30px;" id="target">切换样式</button>
+	</span>
+<script src="js/jquery-3.1.1.js" type="text/javascript"></script>
+<script>
+	var panduan=false;
+	$(document).ready(function(){
+  $("#target").click(function(){
+  	 panduan=!panduan;
+  	 
+    $("#name").toggleClass('name1');
+    $("#name").toggleClass('name2');
+  });
+});
+</script>
+</body>
+
+</html>
